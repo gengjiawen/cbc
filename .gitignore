@@ -1,0 +1,13 @@
+.idea
+*.iml
+bin
+gen
+out
+lib
+
+.DS_Store
+
+.gradle
+build
+local.properties
+reports
