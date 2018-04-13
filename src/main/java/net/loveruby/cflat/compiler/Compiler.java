@@ -15,7 +15,7 @@ import java.io.*;
 public class Compiler {
     // #@@range/main{
     static final public String ProgramName = "cbc";
-    static final public String Version = "1.0.0";
+    static final public String Version = "2018.4.12";
 
     static public void main(String[] args) {
         new Compiler(ProgramName).commandMain(args);
