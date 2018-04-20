@@ -1,0 +1,24 @@
+{
+  "name": "cbc",
+  "version": "1.0.0",
+  "description": "CbC - Cflat Compiler",
+  "bin": "./bin/cbc",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gengjiawen/cbc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gengjiawen/cbc/issues"
+  },
+  "homepage": "https://github.com/gengjiawen/cbc#readme"
+}

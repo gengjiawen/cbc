@@ -1,12 +1,11 @@
-#!/bin/bash
-# cbc -- cflat compiler
+#!/usr/bin/env node
+function main() {
+    const args = process.argv.slice(2)
+    const jarPath = require("path").join(__dirname, 'cbc-2018.04.12.jar')
+    const cmd = `java -jar ${jarPath} ${args.join(" ")}`
+    console.log(cmd);
+    const output = require("child_process").execSync(cmd)
+    console.log(output)
+}
 
-JAVA=${JAVA:-java}
-
-cmd_path="$(readlink -f $0)"
-srcdir_root="$(dirname "$(dirname "$cmd_path")")"
-"$JAVA" -classpath "$srcdir_root/lib/cbc.jar" \
-        net.loveruby.cflat.compiler.Compiler \
-        -I"$srcdir_root/import" \
-        -L"$srcdir_root/lib" \
-        "$@"
+main()
