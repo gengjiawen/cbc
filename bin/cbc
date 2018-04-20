@@ -1,11 +1,14 @@
 #!/usr/bin/env node
+const path = require("path");
+
 function main() {
     const args = process.argv.slice(2)
-    const jarPath = require("path").join(__dirname, 'cbc-2018.04.12.jar')
-    const cmd = `java -jar ${jarPath} ${args.join(" ")}`
+    const jarPath = path.join(__dirname, 'cbc-2018.04.12.jar')
+    const srcDir = path.join(__dirname, "..")
+    const cmd = `java -jar ${jarPath} -I${path.join(srcDir, "import")} -L${path.join(srcDir, "lib")} ${args.join(" ")}`
     console.log(cmd);
-    const output = require("child_process").execSync(cmd)
-    console.log(output)
+    const output = require("child_process").execSync(cmd, {maxBuffer: 5000 * 1024})
+    console.log(output.toString())
 }
 
 main()
